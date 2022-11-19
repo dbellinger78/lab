@@ -1,5 +1,5 @@
 class Account:
-    def __init__(self, acccount_name):
+    def __init__(self, acccount_name: str) -> object:
         '''
         This function takes an account name and creates an Account object.
         :param account_name: This is the name of the person that has the account.
@@ -9,7 +9,7 @@ class Account:
         self.acccount_name = acccount_name
         self.account_balance = 0
 
-    def deposit(self, amount):
+    def deposit(self, amount: float) -> bool:
         '''
         This function takes the amount and verifies that it is a is a positive float 
         value and then updates the account_balance variable of the Account object. 
@@ -27,7 +27,7 @@ class Account:
         else:
             return False   
 
-    def withdraw(self, amount):
+    def withdraw(self, amount: float) -> bool:
         '''
         This function takes the amount and verifies that it is a is a positive float 
         value and that the amount is not greater than the current account_balance, 
@@ -47,7 +47,7 @@ class Account:
         else:
             return False      
     
-    def get_balance(self):
+    def get_balance(self) -> float:
         '''
         This function is used to retrieve the account_balance of the Account object.
 
@@ -55,7 +55,7 @@ class Account:
         ''' 
         return self.account_balance
 
-    def get_name(self):
+    def get_name(self) -> str:
         '''
         This function is used to retrieve the account_name of the Account object.
 
