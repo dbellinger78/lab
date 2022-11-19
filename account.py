@@ -10,7 +10,7 @@ class Account:
             self.account_balance = self.account_balance + amount
             return True
         else:
-            print("Invalid. Check deposit method code.")    
+            return False   
 
     def withdraw(self, amount):
         if amount <= 0 or amount > self.account_balance:
@@ -19,7 +19,7 @@ class Account:
             self.account_balance = self.account_balance - amount
             return True
         else:
-            print("Invalid. Check withdraw method code.")      
+            return False      
     
     def get_balance(self): 
         return self.account_balance
