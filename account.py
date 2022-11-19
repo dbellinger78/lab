@@ -1,7 +1,10 @@
 class Account:
+    '''
+    A class representing an Account object.
+    '''
     def __init__(self, acccount_name: str) -> object:
         '''
-        This function takes an account name and creates an Account object.
+        Constructor method takes an account name and creates an Account object.
         :param account_name: This is the name of the person that has the account.
         :param account_balance: This is the currency balance of the account. The 
         account balance is set to 0 at initialization.
@@ -11,7 +14,7 @@ class Account:
 
     def deposit(self, amount: float) -> bool:
         '''
-        This function takes the amount and verifies that it is a is a positive float 
+        Setter function takes the amount and verifies that it is a is a positive float 
         value and then updates the account_balance variable of the Account object. 
 
         :param amount: This is the dollar amount that is to be deposited in the account.
@@ -29,7 +32,7 @@ class Account:
 
     def withdraw(self, amount: float) -> bool:
         '''
-        This function takes the amount and verifies that it is a is a positive float 
+        Setter function takes the amount and verifies that it is a is a positive float 
         value and that the amount is not greater than the current account_balance, 
         then updates the account_balance variable of the Account object. 
 
@@ -41,7 +44,7 @@ class Account:
         '''
         if amount <= 0 or amount > self.account_balance:
             return False
-        elif amount > 0 and amount < self.account_balance:
+        elif amount > 0 and amount <= self.account_balance:
             self.account_balance = self.account_balance - amount
             return True
         else:
@@ -49,7 +52,7 @@ class Account:
     
     def get_balance(self) -> float:
         '''
-        This function is used to retrieve the account_balance of the Account object.
+        Getter function is used to retrieve the account_balance of the Account object.
 
         :return: The float value stored in the account_balance variable will returned.
         ''' 
@@ -57,7 +60,7 @@ class Account:
 
     def get_name(self) -> str:
         '''
-        This function is used to retrieve the account_name of the Account object.
+        Getter function is used to retrieve the account_name of the Account object.
 
         :return: The string value stored in the account_name variable will returned.
         ''' 
