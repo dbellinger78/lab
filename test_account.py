@@ -23,9 +23,9 @@ class Test:
         assert self.two.deposit(0) is False
         assert self.two.get_balance() == 0
         self.two.deposit(2) is True
-        assert self.two.get_balance() == 2.0
+        assert self.two.get_balance() == pytest.approx(2.0, abs=0.001)
         self.two.deposit(25.05) is True
-        assert self.two.get_balance() == 27.05
+        assert self.two.get_balance() == pytest.approx(27.05, abs=0.001)
 
     def test_withdraw(self):    
         assert self.one.withdraw(-1.01) is False
@@ -39,9 +39,9 @@ class Test:
         assert self.two.get_balance() == 0
         self.two.deposit(25.05) is True
         self.two.withdraw(2.50) is True
-        assert self.two.get_balance() == 22.55    
+        assert self.two.get_balance() == pytest.approx(22.55, abs=0.001)    
         self.two.withdraw(1) is True
-        assert self.two.get_balance() == 21.55    
+        assert self.two.get_balance() == pytest.approx(21.55, abs=0.001)    
 
     def test_get_name(self):
         assert self.one.get_name() == 'John'

@@ -2,15 +2,15 @@ class Account:
     '''
     A class representing an Account object.
     '''
-    def __init__(self, acccount_name: str) -> object:
+    def __init__(self, acccount_name: str, balance=0) -> None:
         '''
         Constructor method takes an account name and creates an Account object.
         :param account_name: This is the name of the person that has the account.
         :param account_balance: This is the currency balance of the account. The 
         account balance is set to 0 at initialization.
         '''
-        self.acccount_name = acccount_name
-        self.account_balance = 0
+        self.__acccount_name = acccount_name
+        self.__account_balance = balance
 
     def deposit(self, amount: float) -> bool:
         '''
@@ -25,7 +25,7 @@ class Account:
         if amount <= 0:
             return False
         elif amount > 0:
-            self.account_balance = self.account_balance + amount
+            self.__account_balance = self.__account_balance + amount
             return True
         else:
             return False   
@@ -42,10 +42,10 @@ class Account:
         the current account_balance, the account_balance is not updated a boolean value of 
         False is returned.
         '''
-        if amount <= 0 or amount > self.account_balance:
+        if amount <= 0 or amount > self.__account_balance:
             return False
-        elif amount > 0 and amount <= self.account_balance:
-            self.account_balance = self.account_balance - amount
+        elif amount > 0 and amount <= self.__account_balance:
+            self.__account_balance = self.__account_balance - amount
             return True
         else:
             return False      
@@ -56,7 +56,7 @@ class Account:
 
         :return: The float value stored in the account_balance variable will returned.
         ''' 
-        return self.account_balance
+        return self.__account_balance
 
     def get_name(self) -> str:
         '''
@@ -64,5 +64,5 @@ class Account:
 
         :return: The string value stored in the account_name variable will returned.
         ''' 
-        return self.acccount_name
+        return self.__acccount_name
 
