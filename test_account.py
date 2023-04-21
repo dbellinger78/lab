@@ -47,7 +47,7 @@ class Test:
         assert self.one.get_name() == 'John'
 
     def test_get_balance(self):
-        assert self.one.get_balance() == 0    
+        assert self.one.get_balance() == 0  
 
 
 if __name__ == '__main__':
