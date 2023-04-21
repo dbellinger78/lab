@@ -64,5 +64,5 @@ class Account:
 
         :return: The string value stored in the account_name variable will returned.
         ''' 
-        return self.__acccount_name
+        return self.__acccount_name 
 
